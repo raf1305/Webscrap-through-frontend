@@ -14,18 +14,14 @@ const filecontent = fs.readFileSync('tut8.html')
 app.get("/", (req, res) => {
     res.status(200).end(filecontent);
 });
-// app.get("/", (req, res)=>{ 
-//     res.status(200).send("This is homepage of my first express app with Harry");
-// });
-// app.get("/submit", (req, res)=>{
-//     res.send("This is about page of my first express app with Harry");
-// });
+
 
 app.post("/submit", (req, res) => {
     console.log(req.body)
-    let search=req.body.myName
+    let search=req.body.myName.toString()
     let limit=parseInt(req.body.number);
-    console.log(typeof limit);
+    console.log(search)
+    console.log(limit)
     let va=[[]]
     let process = spawnSync('python3',["./starter.py",search,limit] );
     let str1=process.output.toString();
@@ -45,31 +41,8 @@ app.post("/submit", (req, res) => {
     const params={'va':va};
     res.status(200).render('index.pug',params);
 
-
-    //res.end("This is about page of my first express app with Harry");
-    // let i=0;
-    // let bb=[]
-
-    // res.write(`${process.output}`);
-    // // process.stdout.on('data', function(data) { 
-    // //     //res.write(`<h1>${data.toString()}<h1>`);
-    // //     bb.push(data);
-    // //     console.log(`${data}`);
-    // //     // var d=data.toString();
-    // //     //res.write(data.toString());
-    // //     //res.write(`${data}`);
-    // // })
-    // //console.log(bb);
-    // console.log(i)
-    // //res.write(`<h1>This is a post request about ${i} page of my first express app with Harry<h1>`);
-    // //res.write(`<h1>${d}<h1>`);
-
-    // }  
-    // res.end();
 });
-// app.get("/this", (req, res)=>{
-//     res.status(404).send("This page is not found on my website cwh");
-// });
+
 
 app.listen(port, () => {
     console.log(`The application started successfully on port ${port}`);

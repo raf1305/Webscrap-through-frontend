@@ -7,68 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forms</title>
 </head>
+<style>
+    .header{
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        padding: 5px;
+        border: 3px gray solid;
+        border-radius: 10px;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .element{
+        margin: 5px;
+        padding: 5px ;
+    }
+    .elementbutton{
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        padding: 5px;
+       
+    }
+</style>
 
 <body>
-    <h2>This is HTML forms tutorial</h2>
-    <form action="/submit" method="POST" id="gg">
-        <!-- <label for="name"> Name</label> -->
-        <div>
-            Name: <input type="text" name="myName" id="myName" placeholder="Name">
-        </div>
-        <br>
-        <div>
-            Role: <input type="number" name="number" id="myRole" placeholder="Role">
-        </div>
-        <!-- <br>
-        <div>
-            Email: <input type="email" name="myEmail">
-        </div>
+    <div class="header">
+        <h1>This website searches Article from bbc.com FOR NOW</h1>
+    </div>
+    
+    <div class="content">
 
-        <br>
-        <div>
-            Date: <input type="date" name="myDate">
-        </div>
-        <br>
-        <div>
-            Bonus: <input type="number" name="myBonus">
-        </div>
-        <br> -->
-        <!-- <div>
-            Are you eligible?: <input type="checkbox" name="myEligibility" checked>
-        </div>
-        <br>
-        <div>
-            Gender: Male <input type="radio" name="myGender"> Female <input type="radio" name="myGender">
-            Other <input type="radio" name="myGender">
-        </div>
-
-        <br>
-        <div>
-            Write about yourself: <br><textarea name="myText" cols="90" rows="10"></textarea>
-        </div>
-
-        <br>
-        <div>
-            <label for="car">Car</label>
-            <select name="myCar" id="car">
-                <option value="ind">Indica</option>node
-                <option value="swf" selected>Swift</option>
-            </select>
-        </div>
-        <br> -->
-
-        <!-- <div>
-            <input type="submit" value="Submit Now">
-            <input type="reset" value="Reset Now">
-            <button type="button">Click Me!</button>
-        </div> -->
-        <!-- <form>
-            <input type="submit" />
-        </form> -->
-        <!-- <a href="https://google.com" class="button">Go to Google</a> -->
-        <!-- <button type="button"> <a href="/submit">submit</a> </button> -->
-        <button type="submit" >submit</button>
-    </form>
+        <form action="/submit" method="POST" id="gg">
+            <!-- <label for="name"> Name</label> -->
+            <div class="element">
+                Query Name :     <input type="text" name="myName" id="myName" placeholder="Keyword">
+            </div>
+            <br>
+            <div class="element">
+                Article Numebr : <input type="number" name="number" id="myRole" placeholder="Number of article">
+            </div>
+            <br>
+            <div class="elementbutton">
+                <button class="btn" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
